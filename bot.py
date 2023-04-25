@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from cred import camilo
+from venv import cred
 
 #create instance of browser using file webdriver for chrome
 service = Service(r'.\chromedriver')
@@ -23,7 +23,7 @@ i_email = WebDriverWait(browser, 10).until(
     'username'
     ))
 )
-i_email.send_keys(camilo.email)
+i_email.send_keys(cred.camilo.email)
 
 i_pass = WebDriverWait(browser, 10).until(
     EC.presence_of_element_located((
@@ -31,7 +31,7 @@ i_pass = WebDriverWait(browser, 10).until(
     'password'
     ))
 )
-i_pass.send_keys(camilo.password)
+i_pass.send_keys(cred.camilo.password)
 
 b_log = WebDriverWait(browser, 10).until(
     EC.presence_of_element_located((
